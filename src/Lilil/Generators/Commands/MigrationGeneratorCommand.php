@@ -1,11 +1,11 @@
-<?php namespace Way\Generators\Commands;
+<?php namespace Lilil\Generators\Commands;
 
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
-use Way\Generators\Parsers\MigrationNameParser;
-use Way\Generators\Parsers\MigrationFieldsParser;
-use Way\Generators\Generator;
-use Way\Generators\SchemaCreator;
+use Lilil\Generators\Parsers\MigrationNameParser;
+use Lilil\Generators\Parsers\MigrationFieldsParser;
+use Lilil\Generators\Generator;
+use Lilil\Generators\SchemaCreator;
 use Config;
 
 class MigrationGeneratorCommand extends GeneratorCommand {
@@ -25,7 +25,7 @@ class MigrationGeneratorCommand extends GeneratorCommand {
     protected $description = 'Generate a new migration';
 
     /**
-     * @var \Way\Generators\ModelGenerator
+     * @var \Lilil\Generators\ModelGenerator
      */
     protected $generator;
 

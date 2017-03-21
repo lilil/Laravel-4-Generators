@@ -1,4 +1,4 @@
-<?php namespace Way\Generators\Filesystem;
+<?php namespace Lilil\Generators\Filesystem;
 
 class Filesystem {
 
@@ -48,4 +48,4 @@ class Filesystem {
         return file_get_contents($file);
     }
 
-} 
+}

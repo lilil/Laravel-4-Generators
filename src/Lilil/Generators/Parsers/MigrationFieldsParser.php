@@ -1,4 +1,4 @@
-<?php namespace Way\Generators\Parsers;
+<?php namespace Lilil\Generators\Parsers;
 
 class MigrationFieldsParser {
 

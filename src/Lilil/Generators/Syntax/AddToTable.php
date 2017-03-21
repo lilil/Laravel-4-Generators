@@ -1,4 +1,4 @@
-<?php namespace Way\Generators\Syntax;
+<?php namespace Lilil\Generators\Syntax;
 
 class AddToTable extends Table {
 
@@ -96,4 +96,4 @@ class AddToTable extends Table {
         return $output;
     }
 
-} 
+}

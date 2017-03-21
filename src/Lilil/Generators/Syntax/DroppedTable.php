@@ -1,4 +1,4 @@
-<?php namespace Way\Generators\Syntax;
+<?php namespace Lilil\Generators\Syntax;
 
 class DroppedTable {
 
@@ -11,6 +11,6 @@ class DroppedTable {
     public function drop($tableName)
     {
         return "Schema::drop('$tableName');";
-    } 
-    
-} 
+    }
+
+}

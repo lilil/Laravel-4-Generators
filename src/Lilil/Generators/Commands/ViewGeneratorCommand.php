@@ -1,4 +1,4 @@
-<?php namespace Way\Generators\Commands;
+<?php namespace Lilil\Generators\Commands;
 
 use Illuminate\Support\Facades\File;
 use Symfony\Component\Console\Input\InputOption;

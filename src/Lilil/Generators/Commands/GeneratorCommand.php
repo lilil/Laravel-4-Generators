@@ -1,16 +1,16 @@
-<?php namespace Way\Generators\Commands;
+<?php namespace Lilil\Generators\Commands;
 
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use Illuminate\Console\Command;
-use Way\Generators\Filesystem\FileAlreadyExists;
-use Way\Generators\Generator;
+use Lilil\Generators\Filesystem\FileAlreadyExists;
+use Lilil\Generators\Generator;
 use Config;
 
 abstract class GeneratorCommand extends Command {
 
     /**
-     * @var \Way\Generators\ModelGenerator
+     * @var \Lilil\Generators\ModelGenerator
      */
     protected $generator;
 
@@ -100,4 +100,4 @@ abstract class GeneratorCommand extends Command {
         ];
     }
 
-} 
+}

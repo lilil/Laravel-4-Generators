@@ -1,3 +1,3 @@
-<?php namespace Way\Generators;
+<?php namespace Lilil\Generators;
 
 class InvalidMigrationName extends \Exception {}

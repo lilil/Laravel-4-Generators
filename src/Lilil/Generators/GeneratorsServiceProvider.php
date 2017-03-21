@@ -1,14 +1,14 @@
-<?php namespace Way\Generators;
+<?php namespace Lilil\Generators;
 
 use Illuminate\Support\ServiceProvider;
-use Way\Generators\Commands\ControllerGeneratorCommand;
-use Way\Generators\Commands\ModelGeneratorCommand;
-use Way\Generators\Commands\ResourceGeneratorCommand;
-use Way\Generators\Commands\SeederGeneratorCommand;
-use Way\Generators\Commands\PublishTemplatesCommand;
-use Way\Generators\Commands\ScaffoldGeneratorCommand;
-use Way\Generators\Commands\ViewGeneratorCommand;
-use Way\Generators\Commands\PivotGeneratorCommand;
+use Lilil\Generators\Commands\ControllerGeneratorCommand;
+use Lilil\Generators\Commands\ModelGeneratorCommand;
+use Lilil\Generators\Commands\ResourceGeneratorCommand;
+use Lilil\Generators\Commands\SeederGeneratorCommand;
+use Lilil\Generators\Commands\PublishTemplatesCommand;
+use Lilil\Generators\Commands\ScaffoldGeneratorCommand;
+use Lilil\Generators\Commands\ViewGeneratorCommand;
+use Lilil\Generators\Commands\PivotGeneratorCommand;
 
 class GeneratorsServiceProvider extends ServiceProvider {
 
@@ -57,7 +57,7 @@ class GeneratorsServiceProvider extends ServiceProvider {
     {
         $this->app['generate.model'] = $this->app->share(function($app)
         {
-            $generator = $this->app->make('Way\Generators\Generator');
+            $generator = $this->app->make('Lilil\Generators\Generator');
 
             return new ModelGeneratorCommand($generator);
         });
@@ -72,7 +72,7 @@ class GeneratorsServiceProvider extends ServiceProvider {
     {
         $this->app['generate.view'] = $this->app->share(function($app)
         {
-            $generator = $this->app->make('Way\Generators\Generator');
+            $generator = $this->app->make('Lilil\Generators\Generator');
 
             return new ViewGeneratorCommand($generator);
         });
@@ -87,7 +87,7 @@ class GeneratorsServiceProvider extends ServiceProvider {
     {
         $this->app['generate.controller'] = $this->app->share(function($app)
         {
-            $generator = $this->app->make('Way\Generators\Generator');
+            $generator = $this->app->make('Lilil\Generators\Generator');
 
             return new ControllerGeneratorCommand($generator);
         });
@@ -102,7 +102,7 @@ class GeneratorsServiceProvider extends ServiceProvider {
     {
         $this->app['generate.migration'] = $this->app->share(function($app)
         {
-            return $this->app->make('Way\Generators\Commands\MigrationGeneratorCommand');
+            return $this->app->make('Lilil\Generators\Commands\MigrationGeneratorCommand');
         });
 
         $this->commands('generate.migration');
@@ -115,7 +115,7 @@ class GeneratorsServiceProvider extends ServiceProvider {
     {
         $this->app['generate.seeder'] = $this->app->share(function($app)
         {
-            $generator = $this->app->make('Way\Generators\Generator');
+            $generator = $this->app->make('Lilil\Generators\Generator');
 
             return new SeederGeneratorCommand($generator);
         });
@@ -143,7 +143,7 @@ class GeneratorsServiceProvider extends ServiceProvider {
     {
         $this->app['generate.resource'] = $this->app->share(function($app)
         {
-            $generator = $this->app->make('Way\Generators\Generator');
+            $generator = $this->app->make('Lilil\Generators\Generator');
 
             return new ResourceGeneratorCommand($generator);
         });

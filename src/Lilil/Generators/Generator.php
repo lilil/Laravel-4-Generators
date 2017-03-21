@@ -1,8 +1,8 @@
-<?php namespace Way\Generators;
+<?php namespace Lilil\Generators;
 
-use Way\Generators\Filesystem\Filesystem;
-use Way\Generators\Compilers\TemplateCompiler;
-use Way\Generators\UndefinedTemplate;
+use Lilil\Generators\Filesystem\Filesystem;
+use Lilil\Generators\Compilers\TemplateCompiler;
+use Lilil\Generators\UndefinedTemplate;
 
 class Generator {
 

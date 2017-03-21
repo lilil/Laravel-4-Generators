@@ -1,4 +1,4 @@
-<?php namespace Way\Generators\Commands;
+<?php namespace Lilil\Generators\Commands;
 
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;

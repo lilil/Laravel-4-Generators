@@ -1,17 +1,17 @@
-<?php namespace Way\Generators\Syntax;
+<?php namespace Lilil\Generators\Syntax;
 
-use Way\Generators\Compilers\TemplateCompiler;
-use Way\Generators\Filesystem\Filesystem;
+use Lilil\Generators\Compilers\TemplateCompiler;
+use Lilil\Generators\Filesystem\Filesystem;
 
 abstract class Table {
 
     /**
-     * @var \Way\Generators\Filesystem\Filesystem
+     * @var \Lilil\Generators\Filesystem\Filesystem
      */
     protected $file;
 
     /**
-     * @var \Way\Generators\Compilers\TemplateCompiler
+     * @var \Lilil\Generators\Compilers\TemplateCompiler
      */
     protected $compiler;
 

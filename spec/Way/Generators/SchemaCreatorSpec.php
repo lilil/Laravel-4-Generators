@@ -1,11 +1,11 @@
 <?php
 
-namespace spec\Way\Generators;
+namespace spec\Lilil\Generators;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Way\Generators\Compilers\TemplateCompiler;
-use Way\Generators\Filesystem\Filesystem;
+use Lilil\Generators\Compilers\TemplateCompiler;
+use Lilil\Generators\Filesystem\Filesystem;
 
 class SchemaCreatorSpec extends ObjectBehavior {
 
@@ -16,7 +16,7 @@ class SchemaCreatorSpec extends ObjectBehavior {
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('Way\Generators\SchemaCreator');
+        $this->shouldHaveType('Lilil\Generators\SchemaCreator');
     }
 
 }

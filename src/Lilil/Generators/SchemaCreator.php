@@ -1,11 +1,11 @@
-<?php namespace Way\Generators;
+<?php namespace Lilil\Generators;
 
-use Way\Generators\Filesystem\Filesystem;
-use Way\Generators\Compilers\TemplateCompiler;
-use Way\Generators\Syntax\AddToTable;
-use Way\Generators\Syntax\CreateTable;
-use Way\Generators\Syntax\DroppedTable;
-use Way\Generators\Syntax\RemoveFromTable;
+use Lilil\Generators\Filesystem\Filesystem;
+use Lilil\Generators\Compilers\TemplateCompiler;
+use Lilil\Generators\Syntax\AddToTable;
+use Lilil\Generators\Syntax\CreateTable;
+use Lilil\Generators\Syntax\DroppedTable;
+use Lilil\Generators\Syntax\RemoveFromTable;
 use Exception;
 
 class SchemaCreator {

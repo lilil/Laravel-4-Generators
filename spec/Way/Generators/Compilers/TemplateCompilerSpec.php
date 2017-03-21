@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\Way\Generators\Compilers;
+namespace spec\Lilil\Generators\Compilers;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -9,7 +9,7 @@ class TemplateCompilerSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('Way\Generators\Compilers\TemplateCompiler');
+        $this->shouldHaveType('Lilil\Generators\Compilers\TemplateCompiler');
     }
 
     function it_compiles_a_template_with_data()

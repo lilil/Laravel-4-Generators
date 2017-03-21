@@ -48,7 +48,7 @@ class FeatureContext extends BehatContext
      */
     public function iGenerateAMigrationWithNameAndFields($migrationName, $fields)
     {
-        $this->tester = new CommandTester(App::make('Way\Generators\Commands\MigrationGeneratorCommand'));
+        $this->tester = new CommandTester(App::make('Lilil\Generators\Commands\MigrationGeneratorCommand'));
 
         $this->tester->execute([
             'migrationName' => $migrationName,
@@ -64,7 +64,7 @@ class FeatureContext extends BehatContext
      */
     public function iGenerateAModelWith($modelName)
     {
-        $this->tester = new CommandTester(App::make('Way\Generators\Commands\ModelGeneratorCommand'));
+        $this->tester = new CommandTester(App::make('Lilil\Generators\Commands\ModelGeneratorCommand'));
 
         $this->tester->execute([
             'modelName' => $modelName,
@@ -78,7 +78,7 @@ class FeatureContext extends BehatContext
      */
     public function iGenerateAControllerWith($controllerName)
     {
-        $this->tester = new CommandTester(App::make('Way\Generators\Commands\ControllerGeneratorCommand'));
+        $this->tester = new CommandTester(App::make('Lilil\Generators\Commands\ControllerGeneratorCommand'));
 
         $this->tester->execute([
             'controllerName' => $controllerName,
@@ -92,7 +92,7 @@ class FeatureContext extends BehatContext
      */
     public function iGenerateAViewWith($viewName)
     {
-        $this->tester = new CommandTester(App::make('Way\Generators\Commands\ViewGeneratorCommand'));
+        $this->tester = new CommandTester(App::make('Lilil\Generators\Commands\ViewGeneratorCommand'));
 
         $this->tester->execute([
             'viewName' => $viewName,
@@ -106,7 +106,7 @@ class FeatureContext extends BehatContext
      */
     public function iGenerateASeedWith($tableName)
     {
-        $this->tester = new CommandTester(App::make('Way\Generators\Commands\SeederGeneratorCommand'));
+        $this->tester = new CommandTester(App::make('Lilil\Generators\Commands\SeederGeneratorCommand'));
 
         $this->tester->execute([
             'tableName' => $tableName,

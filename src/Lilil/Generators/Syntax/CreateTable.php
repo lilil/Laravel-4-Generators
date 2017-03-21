@@ -1,4 +1,4 @@
-<?php namespace Way\Generators\Syntax;
+<?php namespace Lilil\Generators\Syntax;
 
 class CreateTable extends Table {
 
@@ -24,4 +24,4 @@ class CreateTable extends Table {
         return (new AddToTable($this->file, $this->compiler))->add($migrationData, $fields);
     }
 
-} 
+}

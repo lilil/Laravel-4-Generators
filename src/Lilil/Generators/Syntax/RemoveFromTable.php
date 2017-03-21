@@ -1,4 +1,4 @@
-<?php namespace Way\Generators\Syntax;
+<?php namespace Lilil\Generators\Syntax;
 
 class RemoveFromTable extends Table {
 

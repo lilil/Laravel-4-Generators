@@ -1,11 +1,11 @@
 <?php
 
-namespace spec\Way\Generators;
+namespace spec\Lilil\Generators;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Way\Generators\Filesystem\Filesystem;
-use Way\Generators\Compilers\TemplateCompiler;
+use Lilil\Generators\Filesystem\Filesystem;
+use Lilil\Generators\Compilers\TemplateCompiler;
 
 class GeneratorSpec extends ObjectBehavior {
 
@@ -20,7 +20,7 @@ class GeneratorSpec extends ObjectBehavior {
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('Way\Generators\Generator');
+        $this->shouldHaveType('Lilil\Generators\Generator');
     }
 
     function it_compiles_a_template(Filesystem $file, TemplateCompiler $compiler)

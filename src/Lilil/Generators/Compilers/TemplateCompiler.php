@@ -1,4 +1,4 @@
-<?php namespace Way\Generators\Compilers;
+<?php namespace Lilil\Generators\Compilers;
 
 class TemplateCompiler implements Compiler {
 

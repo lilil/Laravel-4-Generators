@@ -1,4 +1,4 @@
-<?php namespace Way\Generators\Compilers;
+<?php namespace Lilil\Generators\Compilers;
 
 interface Compiler {
 
@@ -10,4 +10,4 @@ interface Compiler {
      * @param $data
      */
     public function compile($template, $data);
-} 
+}
