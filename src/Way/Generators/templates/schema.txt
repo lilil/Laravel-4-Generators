@@ -1,0 +1,11 @@
+Schema::$METHOD$('$TABLE$', function(Blueprint $table)
+		{
+			$FIELDS$
+			$table->integer('creator_id')->nullable(); 		// FK to User_ID
+			$table->integer('owner_id')->nullable(); 		// FK to User_ID
+			$table->integer('updated_by')->nullable(); 		// FK to User_ID
+			$table->integer('deleted_by')->nullable(); 		// FK to User_ID
+			$table->integer('permission_id')->nullable();   // FK to Permission_id
+			$table->boolean('locked')->nullable();
+			$table->softDeletes();
+		});
