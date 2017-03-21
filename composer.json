@@ -1,10 +1,10 @@
 {
-    "name": "way/generators",
+    "name": "lilil/generators",
     "description": "Rapidly generate resources, migrations, models, and much more.",
     "license": "MIT",
     "authors": [
         {
-            "name": "Jeffrey Way",
+            "name": "Thanks to Jeffrey Way",
             "email": "jeffrey@jeffrey-way.com"
         }
     ],
@@ -23,7 +23,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Way\\Generators": "src/"
+            "Lilil\\Generators": "src/"
         }
     }
 }

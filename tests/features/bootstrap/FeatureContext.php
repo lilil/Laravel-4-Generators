@@ -55,7 +55,7 @@ class FeatureContext extends BehatContext
             '--fields' => $fields,
             '--testing' => true,
             '--path' => __DIR__.'/../../tmp',
-            '--templatePath' => __DIR__.'/../../../src/Way/Generators/templates/migration.txt'
+            '--templatePath' => __DIR__.'/../../../src/Lilil/Generators/templates/migration.txt'
         ]);
     }
 
@@ -69,7 +69,7 @@ class FeatureContext extends BehatContext
         $this->tester->execute([
             'modelName' => $modelName,
             '--path' => __DIR__.'/../../tmp',
-            '--templatePath' => __DIR__.'/../../../src/Way/Generators/templates/model.txt'
+            '--templatePath' => __DIR__.'/../../../src/Lilil/Generators/templates/model.txt'
         ]);
     }
 
@@ -83,7 +83,7 @@ class FeatureContext extends BehatContext
         $this->tester->execute([
             'controllerName' => $controllerName,
             '--path' => __DIR__.'/../../tmp',
-            '--templatePath' => __DIR__.'/../../../src/Way/Generators/templates/controller.txt'
+            '--templatePath' => __DIR__.'/../../../src/Lilil/Generators/templates/controller.txt'
         ]);
     }
 
@@ -97,7 +97,7 @@ class FeatureContext extends BehatContext
         $this->tester->execute([
             'viewName' => $viewName,
             '--path' => __DIR__.'/../../tmp',
-            '--templatePath' => __DIR__.'/../../../src/Way/Generators/templates/view.txt'
+            '--templatePath' => __DIR__.'/../../../src/Lilil/Generators/templates/view.txt'
         ]);
     }
 
@@ -111,7 +111,7 @@ class FeatureContext extends BehatContext
         $this->tester->execute([
             'tableName' => $tableName,
             '--path' => __DIR__.'/../../tmp',
-            '--templatePath' => __DIR__.'/../../../src/Way/Generators/templates/seed.txt'
+            '--templatePath' => __DIR__.'/../../../src/Lilil/Generators/templates/seed.txt'
         ]);
 
     }
