@@ -526,7 +526,7 @@ php artisan generate:publish-templates --path=app/foo/bar/templates
 ```
 
 When you run the `generate:publish-templates` command, it will also publish
-the configuration to `app/config/packages/way/generators/config/config.php`. This file will look somewhat like:
+the configuration to `app/config/packages/lilil/generators/config/config.php`. This file will look somewhat like:
 
 ```php
 <?php

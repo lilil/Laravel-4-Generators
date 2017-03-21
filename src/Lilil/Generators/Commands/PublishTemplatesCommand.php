@@ -29,7 +29,7 @@ class PublishTemplatesCommand extends Command {
         $this->copyTemplatesDirectoryForEditing();
 
         // We also will publish the configuration
-        $this->call('config:publish', ['package' => 'way/generators']);
+        $this->call('config:publish', ['package' => 'lilil/generators']);
 
         $this->pointConfigFileTemplatesToNewLocation();
 
@@ -60,8 +60,8 @@ class PublishTemplatesCommand extends Command {
      */
     protected function pointConfigFileTemplatesToNewLocation()
     {
-        $configPath = app_path('config/packages/way/generators/config.php');
-        $updated = str_replace('vendor/way/generators/src/Lilil/Generators/templates', $this->option('path'), File::get($configPath));
+        $configPath = app_path('config/packages/lilil/generators/config.php');
+        $updated = str_replace('vendor/lilil/generators/src/Lilil/Generators/templates', $this->option('path'), File::get($configPath));
 
         File::put($configPath, $updated);
     }

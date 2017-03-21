@@ -25,7 +25,7 @@ class GeneratorsServiceProvider extends ServiceProvider {
      */
     public function boot()
     {
-        $this->package('way/generators');
+        $this->package('lilil/generators');
     }
 
 	/**
