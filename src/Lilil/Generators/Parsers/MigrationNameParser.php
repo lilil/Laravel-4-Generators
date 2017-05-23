@@ -15,8 +15,9 @@ class MigrationNameParser {
     {
         // Split the migration name into pieces
         // create_orders_table => ['create', 'orders', 'table']
-        $pieces = explode('_', $migrationName);
-
+        if (strpos($migrationName, '_')) {
+            $pieces = explode('_', $migrationName);
+        }
         // We'll start by fetching the CRUD action type
         $action = $this->normalizeActionName(array_shift($pieces));
 

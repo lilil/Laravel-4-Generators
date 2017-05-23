@@ -54,8 +54,11 @@ class ResourceGeneratorCommand extends Command {
      */
     protected function getModelName($resource)
     {
-        $resource = explode('_', $resource);
-        $resource =  $resource[1];
+        if (strpos($resource, '_')) {
+            $resource = explode('_', $resource);
+            $resource =  $resource[1];
+        }
+
         return ucwords(str_singular(camel_case($resource)));
     }
 
@@ -67,11 +70,14 @@ class ResourceGeneratorCommand extends Command {
      */
     protected function getControllerName($resource)
     {
-        $resource = explode('_', $resource);
-        $name =  $resource[1];
-        $prefix =  $resource[0];
+        if (strpos($resource, '_')) {
+            $resource = explode('_', $resource);
+            $name =  $resource[1];
+        }
 
-        return   'Admin' . ucwords(str_plural(camel_case($name))) . 'Controller';
+        $prefix = Config::get("generators::config.controller_prefix");
+//        $path = $this->getPathByOptionOrConfig('path', 'controller_target_path');
+        return   $prefix . ucwords(str_plural(camel_case($name))) . 'Controller';
     }
 
     /**
@@ -130,8 +136,10 @@ class ResourceGeneratorCommand extends Command {
     {
         $collection = $this->getTableName($resource);
         $modelName = $this->getModelName($resource);
-        $collection = explode('_', $collection);
-        $collection =  $collection[1];
+         if (strpos($resource, '_')) {
+            $collection = explode('_', $collection);
+            $collection =  $collection[1];
+        }
         if ($this->confirm("Do you want me to create views for this $modelName resource? [yes|no]"))
         {
             foreach(['index', 'show', 'create', 'edit'] as $viewName)
