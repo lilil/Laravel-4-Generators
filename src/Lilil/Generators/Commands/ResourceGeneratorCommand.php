@@ -69,7 +69,7 @@ class ResourceGeneratorCommand extends Command {
     {
         $resource = explode('_', $resource);
         $resource =  $resource[1];
-        return   'Admin' .ucwords(str_plural(camel_case($resource))) . 'Controller';
+        return   'Admin' . ucwords($resource[0]) .ucwords(str_plural(camel_case($resource))) . 'Controller';
     }
 
     /**
