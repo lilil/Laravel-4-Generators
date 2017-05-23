@@ -2,7 +2,7 @@
 
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
-use Lilil\Generators\Parsers\ModelFieldsParser;
+//use Lilil\Generators\Parsers\ModelFieldsParser;
 
 class ModelGeneratorCommand extends GeneratorCommand {
 
@@ -27,7 +27,7 @@ class ModelGeneratorCommand extends GeneratorCommand {
 	 * @param MigrationFieldsParser $migrationFieldsParser
 	 * @param SchemaCreator $schemaCreator
 	 */
-	public function __construct(
+/*	public function __construct(
 	    //Generator $generator,
 	    MigrationNameParser $migrationNameParser,
 	    MigrationFieldsParser $migrationFieldsParser
@@ -41,7 +41,7 @@ class ModelGeneratorCommand extends GeneratorCommand {
 
 	    parent::__construct($generator);
 	}
-
+*/
 
 
 	/**
