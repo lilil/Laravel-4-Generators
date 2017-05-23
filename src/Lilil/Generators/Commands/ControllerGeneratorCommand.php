@@ -42,13 +42,14 @@ class ControllerGeneratorCommand extends GeneratorCommand {
         $name = ucwords($this->argument('controllerName'));
 
         // lessons
-        $collection = strtolower(str_replace('Controller', '', $name));
+        //$collection = strtolower(str_replace('Controller', '', $name));
+        $collection = strtolower($this->argument('modelName'));//strtolower(str_replace('Admin', '', $collection));
 
         // lesson
         $resource = str_singular($collection);
 
         // Lesson
-        $model = ucwords($resource);
+        $model = ucwords($this->argument('modelName'));
 
         return compact('name', 'collection', 'resource', 'model');
     }
@@ -71,7 +72,8 @@ class ControllerGeneratorCommand extends GeneratorCommand {
     protected function getArguments()
     {
         return [
-            ['controllerName', InputArgument::REQUIRED, 'The name of the desired controller.']
+            ['controllerName', InputArgument::REQUIRED, 'The name of the desired controller.'],
+            ['modelName', InputArgument::REQUIRED, 'The name of the desired Eloquent model']
         ];
     }
 

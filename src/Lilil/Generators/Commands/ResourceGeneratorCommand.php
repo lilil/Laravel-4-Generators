@@ -68,9 +68,10 @@ class ResourceGeneratorCommand extends Command {
     protected function getControllerName($resource)
     {
         $resource = explode('_', $resource);
-        $resource =  $resource[1];
+        $name =  $resource[1];
+        $prefix =  $resource[0];
 
-        return   'Admin' . ucfirst($resource[0]) . ucwords(str_plural(camel_case($resource))) . 'Controller';
+        return   'Admin' . ucfirst($prefix) . ucwords(str_plural(camel_case($name))) . 'Controller';
     }
 
     /**
@@ -150,10 +151,10 @@ class ResourceGeneratorCommand extends Command {
     protected function callController($resource)
     {
         $controllerName = $this->getControllerName($resource);
-
+        $modelName = $this->getModelName($resource);
         if ($this->confirm("Do you want me to create a $controllerName controller? [yes|no]"))
         {
-            $this->call('generate:controller', compact('controllerName'));
+            $this->call('generate:controller', compact('controllerName', 'modelName'));
         }
     }
 

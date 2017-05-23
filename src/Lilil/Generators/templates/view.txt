@@ -1,1 +1,59 @@
-$PATH$
+@extends($layout)
+
+@section('pagetitle')
+	{{{ $event->title }}}
+@stop
+
+{{-- Page header --}}
+@section('header')
+	<h1>
+		{{{ Lang::get('system/wcw.title') }}}
+		<small>&nbsp;</small>
+	</h1>
+
+@stop
+
+{{-- Subnav Content --}}
+@section('sidebar')
+	@include('ies/wcw/_sidebar')
+@stop
+
+
+{{-- Page content --}}
+@section('content')
+	<div class="row">
+		<div class="col-md-12">
+			<div class="box box-info">
+				<div class="box-header">
+					<h3 class="box-title">ox-title</h3>
+				</div>
+				<div class="box-body">
+				$FIELDS$
+				</div>
+			</div>
+		</div> <!-- end col -->
+	</div> <!-- end row -->
+
+	<div class="row">
+		<div class="col-md-6">
+			<div class="box box-info">
+				<div class="box-header">
+					<h3 class="box-title">box-title</h3>
+				</div>
+				<div class="box-body">
+
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="box box-info">
+				<div class="box-header">
+					<h3 class="box-title">box-title</h3>
+				</div>
+				<div class="box-body">
+
+				</div>
+			</div>
+		</div> <!-- end col -->
+	</div> <!-- end row -->
+@stop

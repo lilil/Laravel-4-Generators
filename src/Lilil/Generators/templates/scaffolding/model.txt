@@ -11,7 +11,10 @@ class $NAME$ extends \Eloquent {
 
     // Add your validation rules here
 	public static $rules = ['title' => 'required',];
-	protected $fillable = ['title'];
+
+
+	protected $fillable = [$FILLABLE$];
+
 
 	protected $dates = ['deleted_at'];
 
@@ -29,13 +32,15 @@ class $NAME$ extends \Eloquent {
 		});
 	}
 
+
+	// Realtions to other models
+
 	public function event()
 	{
 		return $this->belongsTo('App\Models\Event', 'event_id');
 	}
 
 
-
-
-
 }
+
+

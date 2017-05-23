@@ -1,5 +1,22 @@
 <?php
 
+namespace App\Controllers\Admin\Wcw;
+
+use View;
+use Validator;
+use Input;
+use Redirect;
+use Datatables;
+use Datetime;
+use Str;
+use DB;
+use Session;
+use App;
+use App\Models\Event;
+use App\Models\Website;
+use App\Models\$MODEL$;
+
+
 class $NAME$ extends \BaseController {
 
 	/**
@@ -7,11 +24,13 @@ class $NAME$ extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index($eventId)
 	{
-		$$COLLECTION$ = $MODEL$::all();
+		$event = Event::with(array('website', '$COLLECTION$'))->find($eventId);
+		$$COLLECTION$ = $event->$COLLECTION$;
+		//	$$COLLECTION$ = $MODEL$::all();
 
-		return View::make('$COLLECTION$.index', compact('$COLLECTION$'));
+		return View::make('admin.wcw.$COLLECTION$.index', compact('$COLLECTION$', 'event'));
 	}
 
 	/**
@@ -19,9 +38,10 @@ class $NAME$ extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function create($eventId)
 	{
-		return View::make('$COLLECTION$.create');
+		$event = Event::find($eventId);
+		return View::make('admin.wcw.$COLLECTION$.create', compact('event'));
 	}
 
 	/**
@@ -29,8 +49,9 @@ class $NAME$ extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store($eventId)
 	{
+		$event = Event::find($eventId);
 		$validator = Validator::make($data = Input::all(), $MODEL$::$rules);
 
 		if ($validator->fails())
@@ -40,7 +61,7 @@ class $NAME$ extends \BaseController {
 
 		$MODEL$::create($data);
 
-		return Redirect::route('$COLLECTION$.index');
+		return Redirect::to('admin/event/'.$eventId.'/website/$COLLECTION$/index')->with(array('event' => $event, 'success' => '$MODEL$ successfully stored!'));
 	}
 
 	/**
@@ -49,11 +70,13 @@ class $NAME$ extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($eventId)
 	{
-		$$RESOURCE$ = $MODEL$::findOrFail($id);
+		$event = Event::with(array('website', '$COLLECTION$'))->find($eventId);
+		$$COLLECTION$ = $event->$COLLECTION$;
+		// $$RESOURCE$ = $MODEL$::findOrFail($id);
 
-		return View::make('$COLLECTION$.show', compact('$RESOURCE$'));
+		return View::make('admin.wcw.$COLLECTION$.show', compact('$RESOURCE$','event'));
 	}
 
 	/**
@@ -62,11 +85,13 @@ class $NAME$ extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($eventId)
 	{
-		$$RESOURCE$ = $MODEL$::find($id);
+		$event = Event::with(array('website', '$COLLECTION$'))->find($eventId);
+		$$COLLECTION$ = $event->$COLLECTION$;
+		// $$RESOURCE$ = $MODEL$::findOrFail($id);
 
-		return View::make('$COLLECTION$.edit', compact('$RESOURCE$'));
+		return View::make('admin.wcw.$COLLECTION$.edit', compact('$RESOURCE$','event'));
 	}
 
 	/**
@@ -75,10 +100,11 @@ class $NAME$ extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($eventId)
 	{
-		$$RESOURCE$ = $MODEL$::findOrFail($id);
-
+		$event = Event::with(array('website', '$COLLECTION$'))->find($eventId);
+		$$COLLECTION$ = $event->$COLLECTION$;
+		// $$RESOURCE$ = $MODEL$::findOrFail($id);
 		$validator = Validator::make($data = Input::all(), $MODEL$::$rules);
 
 		if ($validator->fails())
@@ -88,7 +114,7 @@ class $NAME$ extends \BaseController {
 
 		$$RESOURCE$->update($data);
 
-		return Redirect::route('$COLLECTION$.index');
+		return Redirect::to('admin/event/'.$eventId.'/website/$COLLECTION$/index')->with(array('event' => $event, 'success' => '$MODEL$ successfully updated!'));
 	}
 
 	/**
@@ -97,11 +123,12 @@ class $NAME$ extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($eventId)
 	{
-		$MODEL$::destroy($id);
-
-		return Redirect::route('$COLLECTION$.index');
+		$event = Event::with(array('website', '$COLLECTION$'))->find($eventId);
+		$$COLLECTION$ = $event->$COLLECTION$;
+		$MODEL$::findOrFail($$COLLECTION$->id);
+		return Redirect::to('admin/event/'.$eventId.'/website/$COLLECTION$/index')->with(array('event' => $event, 'success' => '$MODEL$ successfully deleted!'));
 	}
 
 }

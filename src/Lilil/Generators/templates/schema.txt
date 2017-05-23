@@ -7,5 +7,7 @@ Schema::$METHOD$('$TABLE$', function(Blueprint $table)
 			$table->integer('deleted_by')->nullable(); 		// FK to User_ID
 			$table->integer('permission_id')->nullable();   // FK to Permission_id
 			$table->boolean('locked')->nullable();
+
 			$table->softDeletes();
+			$table->timestamps();
 		});

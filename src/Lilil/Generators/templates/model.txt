@@ -1,5 +1,50 @@
 <?php
+namespace App\Models;
+use Illuminate\Database\Eloquent\SoftDeletingTrait;
+use Auth;
 
 class $NAME$ extends \Eloquent {
+
+	protected $table = '$TABLE$';
+	public $timestamps = true;
+	use SoftDeletingTrait;
+
+    // Add your validation rules here
+	public static $rules = ['title' => 'required',];
+
+
 	protected $fillable = [$FILLABLE$];
+
+
+	protected $dates = ['deleted_at'];
+
+	public static function boot()
+	{
+		parent::boot();
+		static::updating(function($table)  {
+			$table->updated_by = Auth::id();
+		});
+		static::creating(function($table)  {
+			$table->creator_id = Auth::id();
+		});
+		static::deleting(function($table)  {
+			$table->deleted_by = Auth::id();
+		});
+	}
+
+
+	// Realtions to other models
+
+	public function event()
+	{
+		return $this->belongsTo('App\Models\Event', 'event_id');
+	}
+
+	public function website()
+	{
+		return $this->belongsTo('App\Models\Website', 'website_id');
+	}
+
 }
+
+
