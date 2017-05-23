@@ -71,7 +71,7 @@ class ResourceGeneratorCommand extends Command {
         $name =  $resource[1];
         $prefix =  $resource[0];
 
-        return   'Admin' . ucfirst($prefix) . ucwords(str_plural(camel_case($name))) . 'Controller';
+        return   'Admin' . ucwords(str_plural(camel_case($name))) . 'Controller';
     }
 
     /**
