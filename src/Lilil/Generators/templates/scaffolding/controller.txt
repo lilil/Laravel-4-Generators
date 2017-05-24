@@ -70,11 +70,11 @@ class $NAME$ extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($eventId)
+	public function show($eventId, $$COLLECTION$Id)
 	{
 		$event = Event::with(array('website', '$COLLECTION$'))->find($eventId);
 		$$COLLECTION$ = $event->$COLLECTION$;
-		// $$RESOURCE$ = $MODEL$::findOrFail($id);
+		$$RESOURCE$ = $MODEL$::findOrFail($$COLLECTION$Id);
 
 		return View::make('admin.wcw.$COLLECTION$.show', compact('$RESOURCE$','event'));
 	}
@@ -85,11 +85,11 @@ class $NAME$ extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($eventId)
+	public function edit($eventId, $$COLLECTION$Id)
 	{
 		$event = Event::with(array('website', '$COLLECTION$'))->find($eventId);
 		$$COLLECTION$ = $event->$COLLECTION$;
-		// $$RESOURCE$ = $MODEL$::findOrFail($id);
+		$$RESOURCE$ = $MODEL$::findOrFail($$COLLECTION$Id);
 
 		return View::make('admin.wcw.$COLLECTION$.edit', compact('$RESOURCE$','event'));
 	}
@@ -100,11 +100,12 @@ class $NAME$ extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($eventId)
+	public function update($eventId, $$COLLECTION$Id)
 	{
 		$event = Event::with(array('website', '$COLLECTION$'))->find($eventId);
 		$$COLLECTION$ = $event->$COLLECTION$;
-		// $$RESOURCE$ = $MODEL$::findOrFail($id);
+		$$RESOURCE$ = $MODEL$::findOrFail($$COLLECTION$Id);
+
 		$validator = Validator::make($data = Input::all(), $MODEL$::$rules);
 
 		if ($validator->fails())
@@ -123,11 +124,14 @@ class $NAME$ extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($eventId)
+	public function destroy($eventId, $$COLLECTION$Id)
 	{
 		$event = Event::with(array('website', '$COLLECTION$'))->find($eventId);
 		$$COLLECTION$ = $event->$COLLECTION$;
-		$MODEL$::findOrFail($$COLLECTION$->id);
+		$$RESOURCE$ = $MODEL$::findOrFail($$COLLECTION$Id);
+		$$RESOURCE$->delete;
+
+
 		return Redirect::to('admin/event/'.$eventId.'/website/$COLLECTION$/index')->with(array('event' => $event, 'success' => '$MODEL$ successfully deleted!'));
 	}
 
