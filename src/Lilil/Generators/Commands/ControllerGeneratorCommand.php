@@ -2,6 +2,7 @@
 
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
+use Config;
 
 class ControllerGeneratorCommand extends GeneratorCommand {
 
@@ -72,8 +73,8 @@ class ControllerGeneratorCommand extends GeneratorCommand {
     protected function getArguments()
     {
         return [
-            ['controllerName', InputArgument::REQUIRED, 'The name of the desired controller.'],
-            ['modelName', InputArgument::REQUIRED, 'The name of the desired Eloquent model']
+            ['modelName', InputArgument::REQUIRED, 'The name of the desired Eloquent model'],
+            ['controllerName', InputArgument::REQUIRED, 'The name of the desired controller.']
         ];
     }
 

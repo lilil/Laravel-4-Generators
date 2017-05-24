@@ -160,7 +160,7 @@ class ResourceGeneratorCommand extends Command {
     {
         $controllerName = $this->getControllerName($resource);
         $modelName = $this->getModelName($resource);
-        if ($this->confirm("Do you want me to create a $controllerName controller? [yes|no]"))
+        if ($this->confirm("Do you want me to create a $controllerName & $modelName controller? [yes|no]"))
         {
             $this->call('generate:controller', compact('controllerName', 'modelName'));
         }
