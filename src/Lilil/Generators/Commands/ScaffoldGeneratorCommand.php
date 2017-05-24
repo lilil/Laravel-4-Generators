@@ -47,11 +47,12 @@ class ScaffoldGeneratorCommand extends ResourceGeneratorCommand {
     protected function callController($resource)
     {
         $controllerName = $this->getControllerName($resource);
-
+        $modelName = $this->getModelName($resource);
         if ($this->confirm("Do you want me to create a $controllerName controller? [yes|no]"))
         {
             $this->call('generate:controller', [
                 'controllerName' => $controllerName,
+                'modelName' => $modelName,
                 '--templatePath' => Config::get("generators::config.scaffold_controller_template_path")
             ]);
         }
